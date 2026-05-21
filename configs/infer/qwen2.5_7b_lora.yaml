@@ -1,0 +1,22 @@
+model:
+  base: "Qwen/Qwen2.5-7B-Instruct"
+  trust_remote_code: true
+  device: "gpu"
+
+adapter: "outputs/qwen2.5-7b-qlora-run/checkpoint-15"
+load_adapter: true
+
+prompt:
+  user: "用一句话解释什么是机器学习。"
+
+generation:
+  max_new_tokens: 128
+  temperature: 0.7
+  top_p: 0.9
+  do_sample: true
+
+bnb:
+  load_in_4bit: true
+  bnb_4bit_quant_type: "nf4"
+  bnb_4bit_use_double_quant: true
+  bnb_4bit_compute_dtype: "bfloat16"

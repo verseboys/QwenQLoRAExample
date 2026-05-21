@@ -1,0 +1,3 @@
+outputs_dir: "outputs/qwen2.5-7b-qlora-run/checkpoint-15"
+top: 20
+save: "a-doc/eval_report.md"
